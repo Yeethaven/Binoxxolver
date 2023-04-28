@@ -36,7 +36,6 @@ def testCheck():
     assert(not check(grid))
 
 def testBacktrack():
-    '''
     grid = [[0, 0, 1, 1],
             [0, 1, 2, 0],
             [1, 0, 2, 1],
@@ -46,7 +45,7 @@ def testBacktrack():
             [1, 0, 0, 1],
             [1, 1, 0, 0]]
     assert backtrack(grid) == sol
-    '''
+    
 
     grid = [[2, 2, 0, 2, 2, 2],
             [2, 0, 1, 1, 0, 2],
@@ -62,13 +61,11 @@ def testBacktrack():
             [0, 1, 1, 0, 0, 1],
             [0, 1, 1, 0, 1, 0]]
     
-    print(backtrack(grid) == sol)
-
-    #assert backtrack(grid) == sol
+    assert backtrack(grid) == sol
 
 
 def main():
-    #testCheck()
+    testCheck()
     testBacktrack()
 
 

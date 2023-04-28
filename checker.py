@@ -1,5 +1,5 @@
 
-
+# checks if a grid is solved
 def check(grid):
     size = len(grid)
 
@@ -14,7 +14,7 @@ def check(grid):
 
     return True
 
-
+# checks if a row is solved
 def checkRow(row):
         curXs, curOs, amtXs, amtOs = 0, 0, 0, 0
         for square in row:

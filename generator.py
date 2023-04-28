@@ -5,11 +5,10 @@ from checker import check
 
 
 # generates a grid of size N x N. @empty is the percentage of empty squares
-def generate(N, empty):
+def generate(N, percent_empty):
     grid = generate_full(N)
-    empties = round(N**2 * empty)
+    empties = round(N**2 * percent_empty)
 
-    print("empties_start: " + str(empties))
     # randomly delete squares
     # TODO: this is pretty inefficient; for high empty values the loop could go on and on...
     for _ in range (empties):
@@ -18,8 +17,6 @@ def generate(N, empty):
             grid[r][c] = 2
         else:
             empties += 1;
-
-    print("empties_end: "+str(empties))
 
     return grid
 
@@ -48,5 +45,5 @@ def show(grid):
 
 
 
-if __name__ == "__main__":
-    show(generate(6, 0.5))
+#if __name__ == "__main__":
+#    show(generate(6, 0.5))

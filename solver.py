@@ -53,7 +53,7 @@ def check(grid):
 
     return True
 
-
+# checks if a row is still solvable
 def checkRow(row):
         curXs, curOs, amtXs, amtOs, amt2s = 0, 0, 0, 0, 0
         finished = True
