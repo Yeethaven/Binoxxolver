@@ -1,4 +1,5 @@
 from checker import check
+from solver import backtrack
 
 def testCheck():
     grid = [[0, 0, 1, 1],
@@ -34,9 +35,41 @@ def testCheck():
     
     assert(not check(grid))
 
+def testBacktrack():
+    '''
+    grid = [[0, 0, 1, 1],
+            [0, 1, 2, 0],
+            [1, 0, 2, 1],
+            [1, 1, 0, 0]]
+    sol =  [[0, 0, 1, 1],
+            [0, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 1, 0, 0]]
+    assert backtrack(grid) == sol
+    '''
+
+    grid = [[2, 2, 0, 2, 2, 2],
+            [2, 0, 1, 1, 0, 2],
+            [1, 1, 0, 2, 2, 2],
+            [2, 0, 2, 2, 1, 0],
+            [2, 2, 1, 0, 0, 1],
+            [0, 2, 2, 0, 2, 0]]
+
+    sol = [[1, 0, 0, 1, 0, 1],
+            [0, 0, 1, 1, 0, 1],
+            [1, 1, 0, 0, 1, 0],
+            [1, 0, 0, 1, 1, 0],
+            [0, 1, 1, 0, 0, 1],
+            [0, 1, 1, 0, 1, 0]]
+    
+    print(backtrack(grid) == sol)
+
+    #assert backtrack(grid) == sol
+
 
 def main():
-    testCheck()
+    #testCheck()
+    testBacktrack()
 
 
 
