@@ -14,7 +14,7 @@ misc:
 
 
 ### How it works
-The grid is represented as a 2D list of integers, where '0' stand for 'O', '1' stands for 'X' and '2' stands for "empty".
+The grid is represented as a 2D list of integers, where '0' stands for 'O', '1' stands for 'X' and '2' stands for "empty".
 At the moment, the generator is very dumb - it starts by solving an empty grid vie backtracking, and then removes squares until enough squares are empty.
 
 
