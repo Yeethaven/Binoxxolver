@@ -43,7 +43,3 @@ def show(grid):
             print("  ", end = '')
         print("")
 
-
-
-#if __name__ == "__main__":
-#    show(generate(6, 0.5))

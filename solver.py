@@ -42,11 +42,11 @@ def findEmpty(grid):
 def check(grid):
     size = len(grid)
 
-    #check rows
+    # check rows
     for row in grid:
          if not checkRow(row): return False
 
-    #check columns
+    # check columns
     for i in range(size):
         col = [row[i] for row in grid]
         if not checkRow(col): return False
@@ -72,20 +72,15 @@ def checkRow(row):
                 curXs = 0
                 finished = False
 
-
+            # more than 2 in a row
             if curXs > 2 or curOs > 2:
-                 #print("more than 2 in a row!")
-                 #print(row)
                  return False 
         
         if finished and amtOs != amtXs:
-            #print("amtOs != amtXs")
-            #print(row)
             return False
+        
         # if there are more Xs than Os + empties, it's insolvable
         elif amtOs + amt2s < amtXs or amtXs + amt2s < amtOs:
-            #print("not enough empties for balance!")
-            #print(row)
             return False
         
         return True
