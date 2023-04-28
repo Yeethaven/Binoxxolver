@@ -16,11 +16,8 @@ def check(grid):
 
 
 def checkRow(row):
-        print("checking row: ")
-        print(row)
         curXs, curOs, amtXs, amtOs = 0, 0, 0, 0
         for square in row:
-            print("looking at square: " + str(square))
             if (square == 1):
                 amtXs += 1
                 curXs += 1

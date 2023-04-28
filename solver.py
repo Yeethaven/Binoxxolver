@@ -2,7 +2,6 @@ from random import sample
 
 # "dumb" backtracking
 def backtrack(grid):
-    print(".")
     assert grid is not None # if this fails, something has gone wrong
 
     empty = findEmpty(grid)
@@ -75,18 +74,18 @@ def checkRow(row):
 
 
             if curXs > 2 or curOs > 2:
-                 print("more than 2 in a row!")
-                 print(row)
+                 #print("more than 2 in a row!")
+                 #print(row)
                  return False 
         
         if finished and amtOs != amtXs:
-            print("amtOs != amtXs")
-            print(row)
+            #print("amtOs != amtXs")
+            #print(row)
             return False
         # if there are more Xs than Os + empties, it's insolvable
         elif amtOs + amt2s < amtXs or amtXs + amt2s < amtOs:
-            print("not enough empties for balance!")
-            print(row)
+            #print("not enough empties for balance!")
+            #print(row)
             return False
         
         return True
