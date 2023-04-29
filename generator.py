@@ -1,4 +1,5 @@
-from random import randint
+from random import sample
+from itertools import product
 
 from solver import backtrack
 from checker import check
@@ -7,18 +8,14 @@ from checker import check
 # generates a grid of size N x N. @empty is the percentage of empty squares
 def generate(N, percent_empty):
     grid = generate_full(N)
-    empties = round(N**2 * percent_empty)
+    amt_empty = round(N**2 * percent_empty)
 
-    # randomly delete squares
-    # TODO: this is pretty inefficient; for high empty values the loop could go on and on...
-    for _ in range (empties):
-        r, c = randint(0, N-1), randint(0, N-1)
-        if not grid[r][c] == 2:
-            grid[r][c] = 2
-        else:
-            empties += 1;
+    # generate a tuple (r, c) for every square, then choose amt_empty at random
+    empty_squares = sample(list(product(range(N), repeat=2)), k=amt_empty)
+    for (r, c) in empty_squares:
+        grid[r][c] = 2
 
-    return grid
+    return grid    
 
 
 # generates a fully solved grid of size N x N
