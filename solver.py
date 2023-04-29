@@ -84,3 +84,61 @@ def checkRow(row):
             return False
         
         return True
+
+
+def solve_doubles(grid):
+    #TODO
+    return
+
+
+# human-like solving: checking for doubles
+def step_doubles(grid):
+    # TODO: findEmpty will always return the first empty square,
+    #       so if it can't be filled step_doubles will always attempt
+    #       to fill the same square
+    square = findEmpty(grid)
+    if square is None:
+        return True
+    
+    return doubles(square)
+
+
+# checks a square for adjacent doubles
+# returns the number it set the square to, or None if it can't find doubles
+def doubles(square, grid):
+    size = len(grid)
+    (r, c) = square
+    row = grid[r]
+
+    # check the previous entries in the row
+    if c >= 2:
+        prev2, prev1 = row[c-2], row[c-1]
+        if prev1 == prev2 and not prev1 == 2:
+            grid[r][c] = 1 - prev1
+            return 1 - prev1
+    
+    # check the following entries in the row
+    if c <= size - 2:
+        next2, next1 = row[c+2], row[c+1]
+        if next1 == next2 and not next1 == 2:
+            grid[r][c] = 1 - next1
+            return 1 - next1
+
+
+    col = [cur_row[c] for cur_row in grid]
+
+    # check the previous entries in the column
+    if r >= 2:
+        prev2, prev1 = col[r-2], col[r-1]
+        if prev1 == prev2 and not prev1 == 2:
+            grid[r][c] = 1 - prev1
+            return 1 - prev1
+    
+    # check the following entries in the column
+    if r <= size - 2:
+        next2, next1 = col[r+2], col[r+1]
+        if next1 == next2 and not next1 == 2:
+            grid[r][c] = 1 - next1
+            return 1 - next1
+
+    return None
