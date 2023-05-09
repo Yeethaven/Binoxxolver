@@ -27,16 +27,13 @@ def checkRow(row):
                 curOs += 1
                 curXs = 0
             else:
-                print("empty square!")
                 return False #empty  square
 
             if curXs > 2 or curOs > 2:
                  #more than 2 in a row
-                 print("more than 2 in a row!")
                  return False 
         
         if amtOs != amtXs:
-             print("inequality!")
              return False
         
         return True

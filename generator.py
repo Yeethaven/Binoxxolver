@@ -28,14 +28,22 @@ def generate_full(N):
 
 # displays a grid nicely
 def show(grid):
-    for row in grid:
+    N = len(grid)
+    print("    ", end = '')
+    for c in range(N):
+        print(str(c+1)+"  ", end = '')
+    print("\n")
+
+    for r in range(N):
+        print(str(r+1) + "   ", end = '')
+        row = grid[r]
         for square in row:
             if square == 0:
                 print('O', end = '')
             elif square == 1:
                 print('X', end = '')
             else:
-                print('#', end = '')
+                print('-', end = '')
             
             print("  ", end = '')
         print("")
